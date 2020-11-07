@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perlin Noise</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid white;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background-color: #212121;
+            text-align: center;
+            user-select: none;
+        }
+        button {
+            background-color: rgb(0, 182, 0);
+            transition-duration: 0.3s; 
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 10px;
+            border: 0;
+            outline: none;
+        }
+        button:hover {
+            background-color: rgb(0, 255, 0);
+        }
+        button:active {
+            background-color: #000000;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script src="perlin.js"></script>
+    <script src="index.js"></script>
+    <p>Perlin Noise Algorithm by <a href="https://github.com/josephg/noisejs">josephg</a> on Github</p>
+</body>
+</html>
