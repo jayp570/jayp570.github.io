@@ -13,23 +13,23 @@
 
     <div id="sidebar">
         <h1>Jayant Patil</h1>
-        <a href="#projects">Projects</a>
-        <a href="#otherstuff">Other Stuff</a>
-        <a href="#hackathons">Hackathons</a>
-        <a href="#about">About</a>
+        <a href="#projects" class="sidebarNav">Projects</a>
+        <a href="#miscellaneous" class="sidebarNav">Miscellaneous</a>
+        <a href="#hackathons" class="sidebarNav">Hackathons</a>
+        <a href="#about" class="sidebarNav">About</a>
 
         <div id="contact">
             <h2>Contact</h2>
-            <a href="https://github.com/jayp570">Github</a>
-            <a href="https://devpost.com/jayp570">Devpost</a>
-            <a href="">email@email.com</a>
+            <a href="https://github.com/jayp570" class="sidebarNav">Github</a>
+            <a href="https://devpost.com/jayp570" class="sidebarNav">Devpost</a>
+            <a href="" class="sidebarNav">email@email.com</a>
         </div>
     </div>
     
     <div id="content">
 
         <div id="projects">
-            <h2>Projects</h2>
+            <h1>Projects</h1>
 
             <div id="card">
                 <a id="cardTitle" href="projects/ctf/index.html">Capture the Flag</a>
@@ -47,6 +47,7 @@
                     <span id="cardTag">Javascript</span>
                     <span id="cardTag">Canvas</span>
                 </div>
+                <img id="cardImg" src="https://cdn.discordapp.com/attachments/755894691077161041/775170333422387271/unknown.png" alt="">
             </div>
 
             <div id="card">
@@ -56,6 +57,7 @@
                     <span id="cardTag">Javascript</span>
                     <span id="cardTag">Canvas</span>
                 </div>
+                <img id="cardImg" src="https://cdn.discordapp.com/attachments/755894691077161041/775178953253584936/unknown.png" alt="">
             </div>
 
             <div id="card">
@@ -79,60 +81,30 @@
 
 
 
-        <div id="otherstuff">
-            <h2>Other Stuff</h2>
+        <div id="miscellaneous">
+            <h1>Miscellaneous</h1>
+            <div id=gridContainer>
 
-            <div id="row">
-                <div id="column">
+                
+                <div id="leftContainer">
                     <div id="card">
-                        <a id="cardTitle" href="otherstuff/worldgen1/index.html">World Generator 1</a>
+                        <a id="cardTitle" href="miscellaneous/worldgen1/index.html">World Generator 1</a>
                         <p id="cardDesc">A dubious attempt at a top-down world generation algorithm</p>
                         <div id="cardTags">
                             <span id="cardTag">Javascript</span>
                             <span id="cardTag">Canvas</span>
                         </div>
                     </div>
-                </div>
-                <div id="column">
                     <div id="card">
-                        <a id="cardTitle" href="otherstuff/worldgen2/index.html">World Generator 2</a>
-                        <p id="cardDesc">A less dubious attempt at a top-down world generation algorithm with perlin noise</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                            <span id="cardTag"><a href="https://github.com/josephg/noisejs">noisejs</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="row">
-                <div id="column">
-                    <div id="card">
-                        <a id="cardTitle" href="otherstuff/mazegen/index.html">Maze Generator</a>
+                        <a id="cardTitle" href="miscellaneous/mazegen/index.html">Maze Generator</a>
                         <p id="cardDesc">A maze generation algorithm</p>
                         <div id="cardTags">
                             <span id="cardTag">Javascript</span>
                             <span id="cardTag">Canvas</span>
                         </div>
                     </div>
-                </div>
-                <div id="column">
                     <div id="card">
-                        <a id="cardTitle" href="otherstuff/gameoflife/index.html">Conway's Game of Life</a>
-                        <p id="cardDesc">A zero-player cellular automaton made by mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a></p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="row">
-                <div id="column">
-                    <div id="card">
-                        <a id="cardTitle" href="otherstuff/minesweeper/index.html">Minesweeper</a>
+                        <a id="cardTitle" href="miscellaneous/minesweeper/index.html">Minesweeper</a>
                         <p id="cardDesc">Literally just minesweeper</p>
                         <div id="cardTags">
                             <span id="cardTag">Javascript</span>
@@ -140,8 +112,30 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+                
+                <div id="rightContainer">
+                    <div id="card">
+                        <a id="cardTitle" href="miscellaneous/worldgen2/index.html">World Generator 2</a>
+                        <p id="cardDesc">A less dubious attempt at a top-down world generation algorithm with perlin noise</p>
+                        <div id="cardTags">
+                            <span id="cardTag">Javascript</span>
+                            <span id="cardTag">Canvas</span>
+                            <span id="cardTag"><a href="https://github.com/josephg/noisejs">noisejs</a></span>
+                        </div>
+                    </div>
+                    <div id="card">
+                        <a id="cardTitle" href="miscellaneous/gameoflife/index.html">Conway's Game of Life</a>
+                        <p id="cardDesc">A zero-player cellular automaton made by mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a></p>
+                        <div id="cardTags">
+                            <span id="cardTag">Javascript</span>
+                            <span id="cardTag">Canvas</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
 
@@ -151,7 +145,7 @@
 
 
         <div id="hackathons">
-            <h2>Hackathons</h2>
+            <h1>Hackathons</h1>
 
             <div id="card">
                 <a id="cardTitle" href="https://devpost.com/software/adrian-academy">Adrian Academy</a>
@@ -209,18 +203,51 @@
 
 
         <div id="about">
-            <h2>About</h2>
+            <h1>About</h1>
             <p>I am a reall awesome guy</p>
+            © 2020 Jayant Patil
         </div>
 
+
+
+        <img src="https://cdn.discordapp.com/attachments/755894691077161041/775187145346252840/darkmodelightmodebutton.png" alt="" id="modeButtonImg" onclick="clickModeButton()">
+
     </div>
+
+
+    <script>
+        let darkMode = false;
+
+        function clickModeButton() {
+            darkMode = !darkMode
+            if(darkMode) {
+                document.getElementById("sidebar").style.backgroundColor = "#272727"
+                let sidebarNav = document.getElementsByClassName("sidebarNav")
+                for(let link of sidebarNav) {
+                    link.style.color = "#ddd"
+                }
+                document.body.style.backgroundColor = "#343434"
+                document.body.style.color = "#eee"
+            } else {
+                document.getElementById("sidebar").style.backgroundColor = "#fff"
+                let sidebarNav = document.getElementsByClassName("sidebarNav")
+                for(let link of sidebarNav) {
+                    link.style.color = "#111"
+                }
+                document.body.style.backgroundColor = "#eee"
+                document.body.style.color = "#111"
+            }
+        }
+
+    </script>
+
 
 </body>
 </html>
 
 <!--
     <div id="card">
-        <a id="cardTitle" href="otherstuff/__/index.html">__</a>
+        <a id="cardTitle" href="miscellaneous/__/index.html">__</a>
         <p id="cardDesc">___</p>
         <div id="cardTags">
             <span id="cardTag">__</span>

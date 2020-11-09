@@ -1,19 +1,13 @@
 #card {
-    background-color: #eee;
+    background-color: #fff;
     color: #111;
-    margin-left: 20px;
     margin-right: auto;
-    width: 70%;
+    width: 100%;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 2em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
-    min-height: 125px;
-}
-
-#cardDesc {
-    min-height: 5em;
 }
 
 #cardTitle {
@@ -24,13 +18,7 @@
 }
 
 #cardTitle:hover {
-    color: #444;
-}
-
-#cardTags {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 1em;
+    text-decoration: underline;
 }
 
 #cardTag {
@@ -40,12 +28,32 @@
     border-radius: 5px;
 }
 
+#cardImg {
+    padding-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 70%;
+    height: 70%;
+    padding-top: 1em;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 2em;
+    border-top: 2px solid #aaa;
+}
 
-#row {
-    width: 82.5%;
+
+
+
+#gridContainer {
     display: flex;
 }
 
-#column {
-    width: 50%;
+#leftContainer {
+    width: calc(45%);
+}
+
+#rightContainer {
+    margin-left: 75px;
+    flex: 1;
 }

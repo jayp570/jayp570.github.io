@@ -1,5 +1,5 @@
 #sidebar {
-    background-color: #272727;
+    background-color: #fff;
     height: 100%; 
     width: 320px; 
     position: fixed; 
@@ -11,16 +11,16 @@
     padding-left: 30px;
 }
 
-#sidebar a {
-    color: #ddd;
+.sidebarNav {
+    color: #111;
     font-size: 1.25em;
     display: block;
     margin-bottom: 1em;
     text-decoration: none;
 }
 
-#sidebar a:hover {
-    color: #fff;
+.sidebarNav:hover {
+    text-decoration: underline;
 }
 
 

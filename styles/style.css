@@ -1,9 +1,22 @@
 body {
-    background-color: #343434;
-    color: #eee;
+    background-color: #eee;
+    color: #111;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
     margin-bottom: 1em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#modeButtonImg {
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
 }
