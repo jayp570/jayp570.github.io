@@ -12,6 +12,14 @@ html {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 #modeButtonImg {
     width: 32px;
     height: 32px;
