@@ -51,13 +51,15 @@
 
 #gridContainer {
     display: flex;
+    justify-content: space-between;
 }
 
 #leftContainer {
-    width: calc(45%);
+    width: 45.5%;
 }
 
 #rightContainer {
+    width: 50%;
     margin-left: 75px;
     flex: 1;
 }
