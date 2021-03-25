@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1D Terrain Generation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>1D Terrain Generation - Midpoint Displacement</h2>
+    <canvas></canvas> <br>
+    <script src="index.js"></script>
+    <span>Initial Displacement</span> <input type="text" name="" id="maxDisplacementInput" value="200"> <br>
+    <span>Smoothing Rate</span> <input type="text" name="" id="smoothingRateInput" value="2"> <br>
+    <button onclick="reset()">Reset Terrain</button>
+</body>
+</html>
