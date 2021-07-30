@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Set Grapher</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #bigDiv {
+            width: 100%;
+            display: flex;
+        }
+
+        #div1 {
+            width: 100%;
+        }
+
+        #div2 {
+            width: 100%;
+        }
+
+        input {
+            width: 80px;
+            margin: 10px;
+        }
+
+        textarea {
+            width: 90%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Data Set Grapher</h1>
+    <canvas style="border: 1px solid #aaa;"></canvas>
+    <br>
+    <div id="bigDiv">
+        <div id="div1">
+            <span>Width </span><input type="text" name="" id="widthInput" value="1000">
+            <span>Height </span><input type="text" name="" id="heightInput" value="600">
+            <br>
+            <textarea name="" id="datasetInput" cols="62" rows="10" placeholder="Enter input with data set here (separate values with commas)"></textarea>
+            <br>
+        </div>
+        <div id="div2">
+            <p id="ct"></p>
+        </div>
+    </div>
+    <div>
+        <button onclick="display()">Generate Graph</button>
+    </div>
+    <script src="util.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
