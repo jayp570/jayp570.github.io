@@ -45,10 +45,14 @@ function readDatasetInput() {
 }
 
 function readDimInput() {
-    canvas.width = parseInt(document.getElementById("widthInput").value)
-    canvas.height = parseInt(document.getElementById("heightInput").value)
-    graphWidth = canvas.width-(GRAPHOFFSET*2)
-    graphHeight = canvas.height-(GRAPHOFFSET*2)
+    let widthInput = parseInt(document.getElementById("widthInput").value)
+    let heightInput = parseInt(document.getElementById("heightInput").value)
+    if(!isNaN(widthInput) && !isNaN(heightInput) && widthInput > 0 && heightInput > 0) {
+        canvas.width = widthInput
+        canvas.height = heightInput
+        graphWidth = canvas.width-(GRAPHOFFSET*2)
+        graphHeight = canvas.height-(GRAPHOFFSET*2)
+    }
 }
 
 
@@ -161,6 +165,16 @@ function drawGraph() {
 function display() {
     readDimInput()
     readDatasetInput()
-    drawGraph()
-    displayCT()
+    let hasNaN = false
+    for(let item of input) {
+        if(isNaN(item)) {
+            hasNaN = true
+        }
+    }
+    if(hasNaN) {
+        document.getElementById("ct").innerHTML = "That is not a valid data set!"
+    } else {
+        drawGraph()
+        displayCT()
+    }
 }
