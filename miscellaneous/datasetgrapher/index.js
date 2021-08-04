@@ -101,15 +101,18 @@ function mouseMoveHandler(event) {
     let mouseY = event.clientY - rect.top;
     //console.log(`${mouseX}, ${mouseY}`)
 
+    mouseTooltip = null
     for(let bar of bars) {
         bar.highlighted = false
-        mouseTooltip = null
+    }
+    for(let bar of bars) {
         if(bar.checkCollision(mouseX, mouseY)) {
             bar.highlighted = true
             mouseTooltip = new Tooltip(mouseX+10, mouseY+10, 120, 45, `Value: ${bar.value}\nFrequency: ${bar.frequency}`)
             break
         }
     }
+
 
 }
 
