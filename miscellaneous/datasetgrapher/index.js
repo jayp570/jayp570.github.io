@@ -7,6 +7,9 @@ let g = canvas.getContext("2d");
 
 let mouseTooltip = null
 
+let mouseX = 0
+let mouseY = 0
+
 const GRAPHOFFSET = 40
 
 let graphWidth = canvas.width-(GRAPHOFFSET*2)
@@ -89,29 +92,17 @@ window.addEventListener('mouseup', mouseUpHandler, false);
 function mouseDownHandler() {
 
     let rect = canvas.getBoundingClientRect();
-    let mouseX = event.clientX - rect.left;
-    let mouseY = event.clientY - rect.top;
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
 
 }
 
 function mouseMoveHandler(event) {
 
     let rect = canvas.getBoundingClientRect();
-    let mouseX = event.clientX - rect.left;
-    let mouseY = event.clientY - rect.top;
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
     //console.log(`${mouseX}, ${mouseY}`)
-
-    mouseTooltip = null
-    for(let bar of bars) {
-        bar.highlighted = false
-    }
-    for(let bar of bars) {
-        if(bar.checkCollision(mouseX, mouseY)) {
-            bar.highlighted = true
-            mouseTooltip = new Tooltip(mouseX+10, mouseY+10, 120, 45, `Value: ${bar.value}\nFrequency: ${bar.frequency}`)
-            break
-        }
-    }
 
 
 }
@@ -119,8 +110,8 @@ function mouseMoveHandler(event) {
 function mouseUpHandler(event) {
 
     let rect = canvas.getBoundingClientRect();
-    let mouseX = event.clientX - rect.left;
-    let mouseY = event.clientY - rect.top;
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
 
 }
 
@@ -136,6 +127,18 @@ function animate() {
 
     if(mouseTooltip != null) {
         mouseTooltip.draw()
+    }
+
+    mouseTooltip = null
+    for(let bar of bars) {
+        bar.highlighted = false
+    }
+    for(let bar of bars) {
+        if(bar.checkCollision(mouseX, mouseY)) {
+            bar.highlighted = true
+            mouseTooltip = new Tooltip(mouseX+10, mouseY+10, 120, 45, `Value: ${bar.value}\nFrequency: ${bar.frequency}`)
+            break
+        }
     }
 
 }
