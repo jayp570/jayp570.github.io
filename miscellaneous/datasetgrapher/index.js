@@ -5,6 +5,8 @@ canvas.height = 600;
 
 let g = canvas.getContext("2d");
 
+let mouseTooltip = null
+
 const GRAPHOFFSET = 40
 
 let graphWidth = canvas.width-(GRAPHOFFSET*2)
@@ -18,9 +20,12 @@ let xAxisScale
 let yAxisMax
 let yAxisScale
 
+let bars = []
+
 readDimInput()
 
 function readDatasetInput() {
+    bars = []
     input = document.getElementById("datasetInput").value
     input = input.split(",")
     for(let i = 0; i < input.length; i++) {
@@ -55,113 +60,6 @@ function readDimInput() {
     }
 }
 
-
-function drawGraphAxes() {
-    g.fillStyle = "#bbb"
-    g.fillRect(GRAPHOFFSET, GRAPHOFFSET, 2, graphHeight)
-    g.fillRect(GRAPHOFFSET, canvas.height-GRAPHOFFSET, graphWidth, 2)
-}
-
-function drawGraphBars() {
-    g.fillStyle = "#308CFF"
-    let count = 0
-    for(let i = findMinArray(input); i <= findMaxArray(input); i++) {
-        g.fillRect((xAxisScale*count)+GRAPHOFFSET+1, GRAPHOFFSET+graphHeight-(data[i]*yAxisScale), xAxisScale-2, data[i]*yAxisScale)
-        count++
-    }
-}
-
-function drawGraphXScale() {
-    g.textAlign = "center"
-    g.font = "13px helvetica"
-    g.fillStyle = "black"
-    let count = 0
-    for(let i = findMinArray(input); i <= findMaxArray(input); i++) {
-        g.fillText(i+"", (xAxisScale*count)+GRAPHOFFSET+(xAxisScale/2), graphHeight+GRAPHOFFSET+20)
-        count++
-    }
-}
-
-function drawGraphYScale() {
-    g.textAlign = "right"
-    g.font = "13px helvetica"
-    g.fillStyle = "black"
-    for(let i = 0; i <= yAxisMax; i+=10) {
-        g.fillStyle = "black"
-        g.fillText(i+"", GRAPHOFFSET-5, (graphHeight+GRAPHOFFSET)-(i*yAxisScale)+5)
-        g.fillStyle = "#ddd"
-        g.fillRect(GRAPHOFFSET, (graphHeight+GRAPHOFFSET)-(i*yAxisScale), graphWidth, 2)
-    }
-}
-
-function findMode() {
-    let mode = Object.keys(data)[0]
-    for(let key of Object.keys(data)) {
-        if(data[key] > data[mode]) {
-            mode = key
-        }
-    }
-    return mode
-}
-
-function findMean() {
-    let mean = 0
-    for(let num of input) {
-        mean += num
-    }
-    mean /= input.length
-    return mean
-}
-
-function findMedian() {
-    let sortedInput = sortArray(input)
-    return sortedInput[Math.floor(sortedInput.length/2)]
-}
-
-function findVariance() {
-    let mean = findMean()
-    let newList = JSON.parse(JSON.stringify(input))
-    for(let i = 0; i < newList.length; i++) {
-        newList[i] = newList[i]-mean
-        newList[i] = Math.pow(newList[i], 2)
-    }
-    let variance = 0
-    for(let item of newList) {
-        variance += item
-    }
-    variance = variance/input.length
-    return variance
-}
-
-function findSD() {
-    let sd = findVariance()
-    sd = Math.sqrt(sd)
-    return sd
-}
-
-//displays central tendencies
-function displayCT() {
-    document.getElementById("ct").innerHTML = 
-    `
-    Range: ${range} <br>
-    Mode: ${findMode()} <br>
-    Mean: ${findMean()} <br>
-    Median: ${findMedian()} <br>
-    Variance: ${findVariance()} <br>
-    Standard Deviation: ${findSD()}
-    `
-}
-
-function drawGraph() {
-    g.fillStyle = "white"
-    g.fillRect(0, 0, canvas.width, canvas.height)
-    drawGraphXScale()
-    drawGraphYScale()
-    drawGraphAxes()
-    drawGraphBars()
-}
-
-
 function display() {
     readDimInput()
     readDatasetInput()
@@ -174,7 +72,69 @@ function display() {
     if(hasNaN) {
         document.getElementById("ct").innerHTML = "That is not a valid data set!"
     } else {
+        generateGraphBars()
         drawGraph()
         displayCT()
     }
 }
+
+
+
+
+
+window.addEventListener('mousedown', mouseDownHandler, false);
+window.addEventListener('mousemove', mouseMoveHandler, false);
+window.addEventListener('mouseup', mouseUpHandler, false);
+
+function mouseDownHandler() {
+
+    let rect = canvas.getBoundingClientRect();
+    let mouseX = event.clientX - rect.left;
+    let mouseY = event.clientY - rect.top;
+
+}
+
+function mouseMoveHandler(event) {
+
+    let rect = canvas.getBoundingClientRect();
+    let mouseX = event.clientX - rect.left;
+    let mouseY = event.clientY - rect.top;
+    //console.log(`${mouseX}, ${mouseY}`)
+
+    for(let bar of bars) {
+        bar.highlighted = false
+        mouseTooltip = null
+        if(bar.checkCollision(mouseX, mouseY)) {
+            bar.highlighted = true
+            mouseTooltip = new Tooltip(mouseX+10, mouseY+10, 120, 45, `Value: ${bar.value}\nFrequency: ${bar.frequency}`)
+            break
+        }
+    }
+
+}
+
+function mouseUpHandler(event) {
+
+    let rect = canvas.getBoundingClientRect();
+    let mouseX = event.clientX - rect.left;
+    let mouseY = event.clientY - rect.top;
+
+}
+
+
+
+
+function animate() {
+
+    requestAnimationFrame(animate);
+    g.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGraph()
+
+    if(mouseTooltip != null) {
+        mouseTooltip.draw()
+    }
+
+}
+
+animate();
