@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #sliderContainer {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas style="border: 1px solid black;"></canvas>
+    <div>WASD to move camera, click and hold to spawn planet, drag to set initial velocity of planet</div>
+    <div id="sliderContainer">
+        <span>Camera Speed</span>
+        <input type="range" min="1" max="20" value="5" class="slider" id="cameraSpeedSlider" oninput="changeCameraSpeed()">
+    </div>
+    <button onclick="toggleVectors()">Toggle Vectors</button> 
+    <button onclick="togglePaths()">Toggle Paths</button>
+    <button onclick="reset()">Reset</button>
+    <script src="jayant.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
