@@ -45,40 +45,42 @@ class Body {
     }
 
     draw() {
-        if(showPaths) {
-            g.beginPath()
-            g.lineWidth = 1
-            g.strokeStyle = "lightgrey"
-            let step = 3
-            for(let i = this.path.length; i > this.path.length-300; i-=step) {
-                try {
-                    g.moveTo(this.path[i-step].x, this.path[i-step].y)
-                    g.lineTo(this.path[i].x, this.path[i].y)
-                } catch (error) {
-                    
-                }
-            }
-            g.stroke()
-        }
         g.fillStyle = this.color
         g.strokeStyle = this.color
         g.beginPath()
         g.arc(this.pos.x, this.pos.y, this.size, 0, 2*Math.PI)
         g.fill()
-        if(showVectors) {
-            g.strokeStyle = "red"
-            g.lineWidth = 1
-            g.beginPath()
-            g.moveTo(this.pos.x, this.pos.y)
-            g.lineTo(this.pos.x+(this.acc.x*1000), this.pos.y+(this.acc.y*1000))
-            g.stroke()
-            g.strokeStyle = "limegreen"
-            g.lineWidth = 1
-            g.beginPath()
-            g.moveTo(this.pos.x, this.pos.y)
-            g.lineTo(this.pos.x+(this.vel.x*10), this.pos.y+(this.vel.y*10))
-            g.stroke()
+    }
+
+    drawPaths() {
+        g.beginPath()
+        g.lineWidth = 1
+        g.strokeStyle = "lightgrey"
+        let step = 3
+        for(let i = this.path.length; i > this.path.length-300; i-=step) {
+            try {
+                g.moveTo(this.path[i-step].x, this.path[i-step].y)
+                g.lineTo(this.path[i].x, this.path[i].y)
+            } catch (error) {
+                
+            }
         }
+        g.stroke()
+    }
+
+    drawVectors() {
+        g.strokeStyle = "red"
+        g.lineWidth = 1
+        g.beginPath()
+        g.moveTo(this.pos.x, this.pos.y)
+        g.lineTo(this.pos.x+(this.acc.x*1000), this.pos.y+(this.acc.y*1000))
+        g.stroke()
+        g.strokeStyle = "limegreen"
+        g.lineWidth = 1
+        g.beginPath()
+        g.moveTo(this.pos.x, this.pos.y)
+        g.lineTo(this.pos.x+(this.vel.x*10), this.pos.y+(this.vel.y*10))
+        g.stroke()
     }
 
     updatePos() {
@@ -129,7 +131,6 @@ function mouseDownHandler(e) {
     let mouseX = event.clientX - rect.left;
     let mouseY = event.clientY - rect.top;
     if(mouseY < canvas.height) {
-        console.log("asjdhfjklasdf")
         mouseHeld = true
         mouseDownPos = {x: mouseX, y: mouseY}
     }
@@ -200,8 +201,18 @@ function render() {
     }
 
     //draw bodies
+    if(showPaths) {
+        for(let body of bodies) {
+            body.drawPaths()
+        }
+    }
     for(let body of bodies) {
         body.draw()
+    }
+    if(showVectors) {
+        for(let body of bodies) {
+            body.drawVectors()
+        }
     }
     //draw spawning bodies
     if(mouseHeld) {
