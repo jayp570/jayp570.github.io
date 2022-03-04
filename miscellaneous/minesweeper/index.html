@@ -19,7 +19,11 @@
 </head>
 <body>
     <canvas></canvas> <br>
-    <span id="time" style="font-size: larger; font-weight: bold;">0:00</span>
+    <span id="time" style="font-size: x-large; font-weight: bold;">0:00</span>
+    <br> <br>
+    <span>Difficulty</span> <input type="range" min="5" max="80" value="40" class="slider" id="bombAmountSlider">
+    <button onclick="restart()">Restart Game</button>
+    <p>Hold shift to flag tiles</p>
     <script src="game.js"></script> 
 </body>
 </html>
