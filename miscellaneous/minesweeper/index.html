@@ -10,6 +10,7 @@
             margin: auto;
             text-align: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
         }
         canvas {
             border: 4px solid white;
@@ -18,12 +19,15 @@
     </style>
 </head>
 <body>
-    <canvas></canvas> <br>
-    <span id="time" style="font-size: x-large; font-weight: bold;">0:00</span>
-    <br> <br>
-    <span>Difficulty</span> <input type="range" min="5" max="80" value="40" class="slider" id="bombAmountSlider">
-    <button onclick="restart()">Restart Game</button>
-    <p>Hold shift to flag tiles</p>
-    <script src="game.js"></script> 
+    <div style="width: 600px; margin-left: auto; margin-right: auto;">
+        <canvas></canvas>
+        <span style="float: left; margin-left: 6px; font-size: larger;" id="flagsNum"></span>
+        <span id="time" style="font-size: x-large; font-weight: bold; float: right;">0:00</span>
+        <br> <br>
+        <span>Difficulty</span> <input type="range" min="5" max="80" value="40" class="slider" id="bombAmountSlider">
+        <button onclick="restart()">Restart Game</button>
+        <p>Hold shift to flag tiles</p>
+        <script src="game.js"></script> 
+    </div>
 </body>
 </html>

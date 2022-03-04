@@ -8,6 +8,8 @@ let g = canvas.getContext("2d");
 const TILESIZE = 30;
 
 let bombAmount = parseInt(document.getElementById("bombAmountSlider").value)
+let flagsNum = bombAmount
+document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
 
 let lost = false
 let win = false
@@ -40,6 +42,8 @@ function restart() {
     win = false
     seconds = 0
     bombAmount = parseInt(document.getElementById("bombAmountSlider").value)
+    flagsNum = bombAmount
+    document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
     grid = new Grid()
 }
 
@@ -74,8 +78,8 @@ class Tile {
                 g.fill();
             } else if(this.type > 0) {
                 g.fillStyle = "#333"
-                g.font = "bold 20px arial"
-                g.fillText(""+this.type, this.pos.x-6+this.w/2, this.pos.y+8+this.h/2)
+                g.font = "bold 20px courier new"
+                g.fillText(""+this.type, this.pos.x-5+this.w/2, this.pos.y+6+this.h/2)
             }
         } else {
             if(this.flagged) {
@@ -208,7 +212,14 @@ function mouseDownHandler(e) {
                         }
                     } else {
                         if(tile.covered) {
-                            tile.flagged = !tile.flagged
+                            if(tile.flagged) {
+                                tile.flagged = false
+                                flagsNum++
+                            } else if(!tile.flagged && flagsNum > 0) {
+                                tile.flagged = true
+                                flagsNum--
+                            }
+                            document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
                         }
                         
                     }
