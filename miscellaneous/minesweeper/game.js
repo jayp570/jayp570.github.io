@@ -1,11 +1,15 @@
 let canvas = document.querySelector("canvas");
 
-canvas.width = 800;
-canvas.height = 800;
+canvas.width = 600;
+canvas.height = 600;
 
 let g = canvas.getContext("2d");
 
-const TILESIZE = 50;
+const TILESIZE = 30;
+
+let bombAmount = parseInt(document.getElementById("bombAmountSlider").value)
+let flagsNum = bombAmount
+document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
 
 let lost = false
 let win = false
@@ -31,6 +35,17 @@ setInterval(changeTimer = () => {
     document.getElementById("time").innerHTML = ""+`${minutes}:${secondsAfterMinutes}`
 }, 1000)
 
+
+
+function restart() {
+    lost = false
+    win = false
+    seconds = 0
+    bombAmount = parseInt(document.getElementById("bombAmountSlider").value)
+    flagsNum = bombAmount
+    document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
+    grid = new Grid()
+}
 
 
 class Tile {
@@ -59,12 +74,12 @@ class Tile {
             if(this.type == -1) {
                 g.fillStyle = "red"
                 g.beginPath();
-                g.arc(this.pos.x+this.w/2, this.pos.y+this.h/2, 15, 0, 2*Math.PI, false);
+                g.arc(this.pos.x+this.w/2, this.pos.y+this.h/2, (TILESIZE/2)-5, 0, 2*Math.PI, false);
                 g.fill();
             } else if(this.type > 0) {
                 g.fillStyle = "#333"
-                g.font = "bold 30px arial"
-                g.fillText(""+this.type, this.pos.x-8+this.w/2, this.pos.y+12+this.h/2)
+                g.font = "bold 20px courier new"
+                g.fillText(""+this.type, this.pos.x-5+this.w/2, this.pos.y+6+this.h/2)
             }
         } else {
             if(this.flagged) {
@@ -92,16 +107,16 @@ class Grid {
                 this.tiles[i].push(new Tile(j*TILESIZE, i*TILESIZE))
             }
         }
-        this.bombNum = 0
-        for(let i = 0; i < this.tiles.length; i++) {
-            for(let j = 0; j < this.tiles[i].length; j++) {
-                let chance = Math.random()
-                if(chance < 0.1) {
-                    this.tiles[i][j].type = -1
-                    this.bombNum++;
-                }
+
+        //generate bombs
+        for(let i = 0; i < bombAmount; i++) {
+            let coord = {r: Math.floor(Math.random()*this.tiles.length), c: Math.floor(Math.random()*this.tiles[0].length)}
+            while(this.tiles[coord.r][coord.c].type == -1) {
+                coord = {r: Math.floor(Math.random()*this.tiles.length), c: Math.floor(Math.random()*this.tiles[0].length)}
             }
+            this.tiles[coord.r][coord.c].type = -1
         }
+
         for(let i = 0; i < this.tiles.length; i++) {
             for(let j = 0; j < this.tiles[i].length; j++) {
                 if(this.tiles[i][j].type == 0) {
@@ -191,20 +206,27 @@ function mouseDownHandler(e) {
                             if(tile.type == -1) {
                                 lost = true;
                                 grid.uncoverAll()
-                            }else if(tile.type == 0) {
+                            } else if(tile.type == 0) {
                                 grid.flood(j, i)
                             }
                         }
                     } else {
                         if(tile.covered) {
-                            tile.flagged = !tile.flagged
+                            if(tile.flagged) {
+                                tile.flagged = false
+                                flagsNum++
+                            } else if(!tile.flagged && flagsNum > 0) {
+                                tile.flagged = true
+                                flagsNum--
+                            }
+                            document.getElementById("flagsNum").innerHTML = `${flagsNum} Flags`
                         }
                         
                     }
                 }
             }
         }
-        if(grid.countLeft() == grid.bombNum) {
+        if(grid.countLeft() == bombAmount) {
             win = true;
             grid.uncoverAll()
         }
