@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Math Editor</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.css" integrity="sha384-A3N+UgNMKg9+LRsC2HUE0ECxFY7qhztVFORxHQZEPm7lnog2poqmm7CQ91wSEnBc" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.js" integrity="sha384-D0gipC03W+lifpletIVjX+11DUvrzNAMhVux0JrrAMt9Ufgu9HcPdS5GxZSDmNxx" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <h1>Math Editor</h1>
+        <button id="copyButton" onclick="copyLink()">Copy Link</button> 
+        <span style="margin-left: 20px; font-weight: bold; opacity: 0;" id="copiedDisplay">Copied</span>
+        <textarea id="editor" placeholder="Enter LaTeX formula..."></textarea>
+        <br>
+        <br>
+        <div id="output"></div>
+        <div style="margin-left: 20%; margin-right: 20%;">
+            <input type="text" id="searchInput" placeholder="Search for function...">
+            <div id="searchOutput"></div>
+        </div>
+        <script src="index.js"></script>
+        <br>
+    </body>
+</html>
