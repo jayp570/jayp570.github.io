@@ -18,6 +18,9 @@ let functions = [
     {formula: "\\ln{x}", keywords: ["natural logarithm", "ln"]},
     {formula: "\\dots", keywords: ["ellipses", "dot dot dot"]},
     {formula: "\\binom{a}{b}", keywords: ["binomial coefficient"]},
+    {formula: "\\%", keywords: ["percentage", "percent symbol", "percent sign"]},
+    {formula: "\\$", keywords: ["dollar sign", "dollar symbol"]},
+    {formula: "\\#", keywords: ["hashtag", "pound", "number"]},
 ]
 
 //load url params
