@@ -149,8 +149,8 @@ function reveal(guess) {
 
 
 function toggleSettingsPopup() {
-    //FOR SOME FUCKING REASON, THE SETTINGS POPUP TOGGLE ONLY WORKS THE SECOND TIME YOU CLICK IT, THE FIRST TIME THE DISPLAY CLAIMS TO BE UNDEFINED?!??!?!?
-    //NEVERMIND I GOT IT GET FUCKED ^^^^ 
+    //FOR SOME REASON, THE SETTINGS POPUP TOGGLE ONLY WORKS THE SECOND TIME YOU CLICK IT, THE FIRST TIME THE DISPLAY CLAIMS TO BE UNDEFINED?!??!?!?
+    //NEVERMIND I GOT IT^^^^ 
     let settingsPopup = document.getElementById("settingsPopup")
     let popupBackground = document.getElementById("popupBackground")
     console.log(settingsPopup.style.display)
