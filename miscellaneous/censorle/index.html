@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="guessInput" placeholder="Enter Guess..."> <button id="settingsButton" onclick="toggleSettingsPopup()">☰</button>
+        <div id="guessesHeader">
+            <div id="guess">
+                <div id="guessWord"><u><b>Guess</b></u></div>
+                <div id="guessCount"><u><b># of Instances</b></u></div>
+            </div>
+        </div>
+        <div id="guesses">
+        </div>
+    </div>
+    <div id="article"></div>
+    <div id="popupBackground">
+        <div id="settingsPopup">
+            <button onclick="giveUp()">Give Up</button> <br>
+            <button onclick="newGame()">New Game</button>
+            <p><a href="javascript:toggleSettingsPopup()">Close</a></p>
+        </div>
+        <div id="victoryPopup">
+            <button onclick="share()">Share Victory</button> <br>
+            <button onclick="newGame()">New Game</button>
+            <p><a href="javascript:toggleVictoryPopup()">Close</a></p>
+        </div>
+    </div>
+    <script src="articles.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
