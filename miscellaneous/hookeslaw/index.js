@@ -65,7 +65,9 @@ function Point(x, y, velX, velY, mass, fixed, id) {
         }
         this.forces = [] //all forces are instantaneous
 
-        this.path.push(JSON.parse(JSON.stringify(this.pos)))
+        if(frames%1 == 0) {
+            this.path.push(JSON.parse(JSON.stringify(this.pos)))
+        }
         
     }
 
@@ -73,14 +75,10 @@ function Point(x, y, velX, velY, mass, fixed, id) {
         ctx.beginPath()
         ctx.lineWidth = 1
         ctx.strokeStyle = this.pathColor
-        let step = 3
-        for(let i = this.path.length; i > this.path.length-1000; i-=step) {
-            try {
-                ctx.moveTo(this.path[i-step].x, this.path[i-step].y)
-                ctx.lineTo(this.path[i].x, this.path[i].y)
-            } catch (error) {
-                
-            }
+        let pathTime = 500
+        for(let i = this.path.length-1; i > (this.path.length-pathTime > 0 ? this.path.length-pathTime : 0); i--) {
+            ctx.moveTo(this.path[i].x, this.path[i].y)
+            ctx.lineTo(this.path[i-1].x, this.path[i-1].y)
         }
         ctx.stroke()
     }
