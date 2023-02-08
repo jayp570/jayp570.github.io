@@ -40,7 +40,7 @@ function Point(x, y, velX, velY, mass, fixed, id) {
     this.fixed = fixed
 
     this.path = []
-    this.pathColor = `rgb(${Math.random()*(200-20+1)+20}, ${Math.random()*(200-20+1)+20}, ${Math.random()*(200-20+1)+20})`
+    this.pathColor = `hsl(${Math.random()*360}, 100%, 50%)`
 
     this.selected = false
 
