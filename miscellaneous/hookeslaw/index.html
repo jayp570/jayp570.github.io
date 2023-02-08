@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hooke's Law Simulation</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        canvas {
+            width: 800;
+            height: 600;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas> <br> 
+    Click and drag points to move them 
+    <div> <br>
+        <button onclick="restart()">Restart</button>
+        <button onclick="togglePaths()">Toggle Paths (Can slow down your computer)</button>
+        <button onclick="toggleStretchColor()">Toggle Stretch Color Indicator</button> 
+    </div> <br>
+    Change Number of Masses: <button onclick="changeMassNum(-1)">-</button> <button onclick="changeMassNum(1)">+</button> <br> <br>
+    Stiffness (k): <input type="text" name="" id="kInput" value="2" oninput="changeK()"> (Range: 0.1 to 10) <br>
+    Drag Coefficient (R): <input type="text" name="" id="RInput" value="0.01" oninput="changeR()"> (Range: 0.005 to 0.2) <button onclick="toggleDrag()">Toggle Drag</button> 
+
+
+    <script src="vector2.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
