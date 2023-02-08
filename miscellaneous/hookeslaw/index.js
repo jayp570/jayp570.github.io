@@ -40,7 +40,7 @@ function Point(x, y, velX, velY, mass, fixed, id) {
     this.fixed = fixed
 
     this.path = []
-    this.pathColor = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`
+    this.pathColor = `rgb(${Math.random()*(200-20+1)+20}, ${Math.random()*(200-20+1)+20}, ${Math.random()*(200-20+1)+20})`
 
     this.selected = false
 
@@ -209,7 +209,7 @@ function updatePhysics() {
         point.addForce(new Vector2(0, point.mass*g)) //gravity
 
         let v = point.vel.getMagnitude()
-        let dragForce = -1*R*v*v //drag equation: F_d = 0.5 * rho * C_d * A * v^2
+        let dragForce = -1*R*v //drag equation: F_d = 0.5 * rho * C_d * A * v^2
         if(v != 0 && dragEnabled) {
             point.addForce(new Vector2(dragForce*(point.vel.x/v), dragForce*(point.vel.y/v)))
         }
