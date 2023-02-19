@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Field Lines</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        canvas {
+            width: 800;
+            height: 600;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas> <br> 
+    <p>Press SPACE to play/pause the simulation, Click and drag to move points</p>
+    <button onclick="toggleFieldLines()">Toggle Field Lines</button>
+    <button onclick="togglePaths()">Toggle Paths</button> <br> <br>
+
+    Field lines per point: <input type="text" name="" id="lineNumberInput" value="8"> <br> <br>
+
+    <button onclick="addPositiveCharge()">Add Positive Charge</button>
+    <button onclick="addNegativeCharge()">Add Negative Charge</button>
+    
+
+    <script src="vector2.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
