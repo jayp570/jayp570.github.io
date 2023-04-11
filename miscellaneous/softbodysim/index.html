@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Body Simulation</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        canvas {
+            width: 800;
+            height: 600;
+            border: 1px black solid;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <canvas></canvas> 
+    </div> <br>
+    Click on empty space to restart and apply width and height changes
+    <button onclick="toggleMesh()" style="margin-left: 20px;">Toggle Jello Mode</button>
+    <br>
+    Firmness (k): <input type="text" name="" id="kInput" value="10" oninput="changeK()"> (Range: ~5 to ~40) <br>
+    Damping Coefficient (R): <input type="text" name="" id="RInput" value="0.04" oninput="changeR()"> (Range: ~0 to ~0.3) <br>
+    Soft Body Width: <input type="text" name="" id="bodyWidthInput" value="4">
+    Soft Body Height: <input type="text" name="" id="bodyHeightInput" value="4"> <br>
+    (Changing the dimensions of the soft body may lead to it collapsing; modify k and R as needed)
+    <script src="vector2.js"></script>
+    <script src="softbody.js"></script>
+    <!-- <script src="softbody2.js"></script> -->
+    <script src="index.js"></script>
+</body>
+</html>
