@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loopover</title>
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #111;
+        }
+
+        button {
+            padding: 20px;
+            padding-right: 50px;
+            padding-left: 50px;
+            width: 600px;
+        }
+
+        p {
+            width: 50%;
+            margin: auto;
+        }
+
+        canvas {
+            margin: auto;
+        }
+
+        #content {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p id="timer">0:00</p>
+        <canvas></canvas> <br>
+        <button onclick="scramble()">Scramble</button>
+        <p>Unscramble the board by clicking and dragging on letters to win.</p>
+    </div>
+    <script src="index.js"></script> 
+</body>
+</html>

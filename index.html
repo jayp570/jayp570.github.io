@@ -2,320 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
-    <link rel="stylesheet" href="styles/content.css">
-    <link rel="stylesheet" href="styles/card.css">
-    <title>Jayant Patil</title>
-    <link rel="icon" type="image/png" href="images/pfp.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Jay Patil</title>
 </head>
 <body>
-
-    <div id="sidebar">
-        <img src="images/pfp.png" alt="" id="pfp">
-        <h1>Jayant Patil</h1>
-        <a href="#projects" class="sidebarNav">Projects</a>
-        <a href="#miscellaneous" class="sidebarNav">Miscellaneous</a>
-        <a href="#hackathons" class="sidebarNav">Hackathons</a>
-        <a href="#about" class="sidebarNav">About</a>
-
-        <div id="contact">
-            <h2>Contact</h2>
-            <a href="https://github.com/jayp570" class="sidebarNav">Github</a>
-            <a href="https://devpost.com/jayp570" class="sidebarNav">Devpost</a>
-        </div>
-    </div>
-    
     <div id="content">
-
-        <div id="projects">
-            <h1>Projects</h1>
-
-            <div id="card">
-                <a id="cardTitle" href="projects/raycaster/index.html">Raycaster</a>
-                <p id="cardDesc">A 2.5D sandbox raycaster in Canvas</p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">Canvas</span>
-                </div>
-                <img id="cardImg" src="https://cdn.discordapp.com/attachments/755894691077161041/775170333422387271/unknown.png" alt="">
-            </div>
-
-            <div id="card">
-                <a id="cardTitle" href="https://github.com/jayp570/particlesystem">Particle System Library</a>
-                <p id="cardDesc">A simple, open-source, 2D, customizable particle system useful for minimalist explosions, smoke effects, fireworks, and more</p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">Canvas</span>
-                </div>
-                <img id="cardImg" src="https://cdn.discordapp.com/attachments/755894691077161041/775178953253584936/unknown.png" alt="">
-            </div>
-
-            <div id="card">
-                <a id="cardTitle" href="projects/shootygame/index.html">Shooty Game (WIP)</a>
-                <p id="cardDesc">A top-down, movement, arena shooter in browser</p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">Canvas</span>
-                    <span id="cardTag">MY Particle System Library</span>
-                    <span id="cardTag"><a href="https://github.com/goldfire/howler.js/">howler.js</a></span>
-                </div>
-            </div>
-
+        <div id="section">
+            <h1>Jay Patil</h1>
+            <h2>About</h2>
+            <p>Hello, I'm Jay. I'm an incoming freshman at UT Austin majoring in computer science and physics.</p>
+            <p>This is my site where I post my programming projects and miscellaneous tinkerings; I mostly dabble in computational science, physics simulations, game development, or anything cool that I find or come up with. My other interests inclue history, geography, zoology, art, and math.</p>
+            <ul>
+                <li><a href="simulations.html">Simulations</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="other.html">Demos/Other</a></li>
+            </ul>
         </div>
-
-
-
-
-
-
-
-
-
-        <div id="miscellaneous">
-            <h1>Miscellaneous</h1>
-            <div id=gridContainer>
-
-                
-                <div id="column">
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/worldgen.html">The World Generation Saga</a>
-                        <p id="cardDesc">My various attempts at world generation ranging from terrifying to pretty neat</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/mazegen/index.html">Maze Generator</a>
-                        <p id="cardDesc">A maze generation algorithm</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/minesweeper/index.html">Minesweeper</a>
-                        <p id="cardDesc">Literally just Minesweeper</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/checkers/index.html">Checkers</a>
-                        <p id="cardDesc">Literally just checkers</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/gravitysim/index.html">Universal Gravitation Simulation</a>
-                        <p id="cardDesc">A program that simulates gravitational force between planets in space</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/coulombslaw/">Coulomb's Law Simulation</a>
-                        <p id="cardDesc">A program that simulates electrostatic attraction between charges and generates electric field lines</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/softbodysim/">Soft Body Simulation</a>
-                        <p id="cardDesc">A program that simulates soft bodies using a matrix of spring-mass systems</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div id="column">
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/gameoflife/index.html">Conway's Game of Life</a>
-                        <p id="cardDesc">A zero-player cellular automaton made by mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a></p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/collisiondemo/index.html">Collision Demo</a>
-                        <p id="cardDesc">A quick little collision demo that also has some sweet smooth camera movement</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/1dterraingen/index.html">1D Terrain Generation</a>
-                        <p id="cardDesc">A 1-dimensional terrain generator using <a href="http://ijcsit.com/docs/Volume%207/vol7issue2/ijcsit20160702114.pdf">midpoint displacement</a></p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/datasetgrapher/index.html">Data Set Grapher</a>
-                        <p id="cardDesc">A tool used to graph data sets and calculate measures of central tendency</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/hookeslaw/index.html">Hooke's Law Simulation</a>
-                        <p id="cardDesc">A program that simulates Hooke's law in 2D with springs and masses in series</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                    <div id="card">
-                        <a id="cardTitle" href="miscellaneous/beziercurve/index.html">Bezier Curve Demo</a>
-                        <p id="cardDesc">A small bezier curve demo where you can make n order bezier curves</p>
-                        <div id="cardTags">
-                            <span id="cardTag">Javascript</span>
-                            <span id="cardTag">Canvas</span>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+        <div id="section">
+            <h2>Contact</h2>
+            <ul>
+                <li>Feel free to reach out to me at <b>jayantpatil570@gmail.com</b>.</li>
+                <li><a href="https://github.com/jayp570">Github</a></li>
+                <li><a href="https://devpost.com/jayp570">Devpost</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
         </div>
-
-
-
-
-
-
-
-        <div id="hackathons">
-            <h1>Hackathons</h1>
-
-            <div id="card">
-                <a id="cardTitle" href="https://devpost.com/software/adrian-academy">Adrian Academy</a>
-                <h3>PalyHacks 2020</h3>
-                <p id="cardDesc">
-                    A set of lessons and exercises to teach Javascript to those new to programming <br> <a href="https://github.com/jayp570/palyhacks2020/graphs/contributors">Contributors</a>
-                </p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">CSS</span>
-                    <span id="cardTag">HTML</span>
-                </div>
-            </div>
-
-            <div id="card">
-                <a id="cardTitle" href="https://devpost.com/software/intheloop-4gjy1o">InTheLoop</a>
-                <h3>AtlasHacks 2020</h3>
-                <p id="cardDesc">
-                    A web app that compiles posts from different social media platforms of one content creator into one digestable feed<br> <a href="https://github.com/jayp570/atlashacks2020/graphs/contributors">Contributors</a>
-                </p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">CSS</span>
-                    <span id="cardTag">HTML</span>
-                    <span id="cardTag">Node.js</span>
-                    <span id="cardTag">Twitter API</span>
-                    <span id="cardTag">Youtube API</span>
-                </div>
-            </div>
-
-            <div id="card">
-                <a id="cardTitle" href="https://devpost.com/software/jigsaw-moj9gn">Jigsaw</a>
-                <h3>FlareHacks 2020</h3>
-                <p id="cardDesc">
-                    A website that allows users to submit coding problems for others to provide solutions to in browser <br> <a href="https://github.com/adrian154/flarehacks2020/graphs/contributors">Contributors</a>
-                </p>
-                <div id="cardTags">
-                    <span id="cardTag">Javascript</span>
-                    <span id="cardTag">CSS</span>
-                    <span id="cardTag">HTML</span>
-                    <span id="cardTag">Node.js</span>
-                    <span id="cardTag">CodeMirror</span>
-                    <span id="cardTag">Marked</span>
-                    <span id="cardTag">SQLite</span>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-
-
-
-
-        <div id="about">
-            <h1>About</h1>
-            <div id="card">
-                <p id="cardDesc">
-                    Hi! My name is Jayant and I like programming as well as art and design.
-                    <br><br>
-                    I mostly do web development and dabble in computer graphics, games, and simulations.
-                    <br><br>
-                    If you want to contact me you can email me at <b>jayantpatil570@gmail.com</b>. I am more than willing to talk (or argue) about geography, history, and putrid UI design or talk about wacky hypotheticals, so if you're into that, be my guest. 
-                </p>
-            </div>
-        </div>
-        <br>
-        © 2023 Jayant Patil
-
-
-
-        <img src="https://cdn.discordapp.com/attachments/755894691077161041/775187145346252840/darkmodelightmodebutton.png" alt="" id="modeButtonImg" onclick="clickModeButton()">
-
+        <p id="copyright">© Jayant Patil 2023</p>
     </div>
-
-
-    <script>
-        let darkMode = false;
-
-        function clickModeButton() {
-            darkMode = !darkMode
-            if(darkMode) {
-                document.getElementById("sidebar").style.backgroundColor = "#272727"
-                let sidebarNav = document.getElementsByClassName("sidebarNav")
-                for(let link of sidebarNav) {
-                    link.style.color = "#ddd"
-                }
-                document.body.style.backgroundColor = "#343434"
-                document.body.style.color = "#eee"
-            } else {
-                document.getElementById("sidebar").style.backgroundColor = "#fff"
-                let sidebarNav = document.getElementsByClassName("sidebarNav")
-                for(let link of sidebarNav) {
-                    link.style.color = "#111"
-                }
-                document.body.style.backgroundColor = "#eee"
-                document.body.style.color = "#111"
-            }
-        }
-
-    </script>
-
-
 </body>
 </html>
-
-<!--
-    <div id="card">
-        <a id="cardTitle" href="miscellaneous/__/index.html">__</a>
-        <p id="cardDesc">___</p>
-        <div id="cardTags">
-            <span id="cardTag">__</span>
-            <span id="cardTag">__</span>
-        </div>
-    </div>
--->
