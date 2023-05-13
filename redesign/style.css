@@ -2,7 +2,7 @@ body {
     margin-top: 80px;
     margin-left: 30%;
     margin-right: 30%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifs;
+    font-family: 'Lato', sans-serif;
     background-color: rgb(247, 247, 247);
     color: #222;
 }
@@ -11,6 +11,24 @@ body {
     margin-bottom: 50px;
 }
 
+#copyright {
+    color: #555;
+    font-size: small;
+}
+
 li {
     margin-bottom: 10px;
+}
+
+a:link {
+    color: rgb(54, 212, 212);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(74, 143, 143)
+}
+
+a:hover {
+    text-decoration: underline;
 }
