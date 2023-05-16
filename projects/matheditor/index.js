@@ -1,23 +1,33 @@
 let functions = [
     {formula: "\\frac{a}{b}", keywords: ["fraction", "divide"]},
+
     {formula: "\\int_{a}^{b}", keywords: ["integral"]},
+    {formula: "\\oint_{a}^{b}", keywords: ["closed loop integral", "closed line integral", "closed contour integral", "o integral"]},
+    {formula: "\\iint_{a}^{b}", keywords: ["double integral", "multiple integral"]},
+    {formula: "\\iiint_{a}^{b}", keywords: ["triple integral", "multiple integral"]},
+    {formula: "\\nabla", keywords: ["nabla", "gradient operator", "divergence operator", "curl operator"]},
+    {formula: "\\partial", keywords: ["partial derivative"]},
+
     {formula: "\\sum_{n=1}^{\\infty}", keywords: ["summation", "sigma notation", "series"]},
     {formula: "\\prod_{i=a}^{b}", keywords: ["product", "pi notation"]},
     {formula: "\\lim_{x\\to\\infty}", keywords: ["limit"]},
     {formula: "a^{n}", keywords: ["superscript, power", "exponent"]},
     {formula: "a_{n}", keywords: ["subscript"]},
     {formula: "\\sqrt[n]{a}", keywords: ["square root", "radical"]},
+
     {formula: "\\sin(x)", keywords: ["sine"]},
     {formula: "\\cos(x)", keywords: ["cosine"]},
     {formula: "\\tan(x)", keywords: ["tangent"]},
     {formula: "\\cot(x)", keywords: ["cotangent"]},
     {formula: "\\sec(x)", keywords: ["secant"]},
     {formula: "\\csc(x)", keywords: ["cosecant"]},
+
     {formula: "\\pm", keywords: ["plus or minus"]},
     {formula: "\\log_b{x}", keywords: ["logarithm"]},
     {formula: "\\ln{x}", keywords: ["natural logarithm", "ln"]},
     {formula: "\\dots", keywords: ["ellipses", "dot dot dot"]},
     {formula: "\\binom{a}{b}", keywords: ["binomial coefficient"]},
+
     {formula: "\\%", keywords: ["percentage", "percent symbol", "percent sign"]},
     {formula: "\\$", keywords: ["dollar sign", "dollar symbol"]},
     {formula: "\\#", keywords: ["hashtag", "pound", "number"]},
