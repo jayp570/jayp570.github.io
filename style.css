@@ -36,3 +36,16 @@ a:hover {
 #titleLink {
     color: #222;
 }
+
+#date {
+    color: #555;
+    font-size: medium;
+}
+
+#blogpost {
+    margin: 10px;
+}
+
+#blogpost h2 {
+    
+}
